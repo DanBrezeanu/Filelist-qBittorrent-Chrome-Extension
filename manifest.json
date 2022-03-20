@@ -1,0 +1,39 @@
+{
+    "name": "Filelist to qBittorrent",
+    "description": "Download your torrent filelist files directly into qBittorrent.",
+    "version": "0.1.0",
+    "manifest_version": 3,
+    "icons": {
+        "48": "./images/logo_48.png"
+    },
+    "background": {
+        "service_worker": "./js/background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://filelist.io/"],
+            "js": ["./js/foreground.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "./html/menu.html"
+    },
+    "permissions": [
+        "tabs",
+        "storage",
+        "scripting",
+        "downloads"
+    ],
+    "options_page": "./html/options.html",
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "web_accessible_resources": [{
+        "matches": ["<all_urls>"],
+        "resources": [
+            "images/qbit_icon.png",
+            "images/check.png",
+            "images/cross.png"
+        ]
+    }]
+}

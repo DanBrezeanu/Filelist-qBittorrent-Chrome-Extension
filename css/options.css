@@ -1,0 +1,16 @@
+* {
+    font-family: Arial;
+}
+
+body {
+    background-color: #2c2f2d !important;
+}
+
+.logo {
+    margin: auto;
+    display: block;
+}
+
+.border-3 {
+    border-width: 3px !important;
+}
